@@ -26,6 +26,8 @@ export default {
     }, {
         id: 'category2',
         title: 'Big Things',
+        time: 3,
+        numberOfParts: 4,
         movies: [{
             id: 'movie1',
             title: 'Oversized Sweater',

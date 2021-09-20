@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ColorSchemeName, Pressable } from 'react-native';
 import CoursesScreen from '../screens/CoursesScreen';
 import CourseDetailsScreen from '../screens/CourseDetailsScreen';
+
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
@@ -19,6 +20,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps, HomeStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import EpisodeVideoScreen from '../screens/EpisodeVideoScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -119,8 +121,12 @@ const HomeStack = createNativeStackNavigator<HomeStackParamList>()
 function HomeNavigator() {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="Courses" component={CoursesScreen} options={{ headerShown: false }} />
-      <HomeStack.Screen name="CourseDetails" component={CourseDetailsScreen} />
+      <HomeStack.Screen name='Courses' component={CoursesScreen} options={{ headerShown: false }} />
+      <HomeStack.Screen name='CourseDetails' component={CourseDetailsScreen} options={{
+        title: '',
+      }} />
+      <HomeStack.Screen name='Video' component={EpisodeVideoScreen} options={{ headerShown: false }} />
+
 
     </HomeStack.Navigator>
   );

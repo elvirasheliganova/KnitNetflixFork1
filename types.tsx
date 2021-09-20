@@ -34,6 +34,7 @@ export type RootTabParamList = {
 export type HomeStackParamList = {
   Courses: undefined;
   CourseDetails: undefined;
+  Video: undefined
 
 }
 

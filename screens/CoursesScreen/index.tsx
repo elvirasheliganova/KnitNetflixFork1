@@ -6,7 +6,12 @@ import categories from '../../assets/data/categories'
 import CoursesCategory from '../../components/CoursesCategory'
 
 const CoursesScreen = () => {
+
+
   return (
+
+
+
     <View style={styles.container}>
       <FlatList
         data={categories.items}

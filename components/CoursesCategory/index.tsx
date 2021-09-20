@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, Text, Image, ImageBackground } from 'react-native'
+import { View, Text, Image, ImageBackground, Pressable } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native';
 import styles from './styles'
 
 
@@ -18,18 +19,23 @@ interface CoursesCategoryProps {
 
 const CoursesCategory = (props: CoursesCategoryProps) => {
 
+  const navigation = useNavigation()
+
   const { category } = props
+  const onPress = (movie: { id: any; }) => {
+    navigation.navigate('CourseDetails', { id: movie.id })
+  }
   return (
     <View>
       <Text style={styles.title} >{category.title}</Text>
       <FlatList
         data={category.movies}
         renderItem={({ item }) => (
-          <View style={styles.imageContainer}>
+          <Pressable style={styles.imageContainer} onPress={() => onPress(item)} >
             <ImageBackground style={styles.image} source={{ uri: item.poster }} >
               <Text style={styles.courseTitle}>{item.title}</Text>
             </ImageBackground>
-          </View>
+          </Pressable>
         )}
         horizontal
       />
