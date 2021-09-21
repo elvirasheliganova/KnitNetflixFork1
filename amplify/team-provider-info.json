@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-knitnetflix-dev-172145-authRole",
+      "UnauthRoleArn": "arn:aws:iam::518549961774:role/amplify-knitnetflix-dev-172145-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::518549961774:role/amplify-knitnetflix-dev-172145-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-knitnetflix-dev-172145-deployment",
+      "UnauthRoleName": "amplify-knitnetflix-dev-172145-unauthRole",
+      "StackName": "amplify-knitnetflix-dev-172145",
+      "StackId": "arn:aws:cloudformation:eu-central-1:518549961774:stack/amplify-knitnetflix-dev-172145/796c8fc0-1a26-11ec-a03d-0291281952d8",
+      "AmplifyAppId": "d1r9vi2wq0xtl4"
+    },
+    "categories": {
+      "auth": {
+        "knitnetflix4468dd20": {}
+      }
+    }
+  }
+}
