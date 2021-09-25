@@ -1,6 +1,6 @@
 {
   "auth": {
-    "knitnetflix4468dd20": {
+    "knitnetflix8ba564b6": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -21,6 +21,23 @@
         "verificationMechanisms": [
           "EMAIL"
         ]
+      }
+    }
+  },
+  "api": {
+    "knitnetflix": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authknitnetflix8ba564b6"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
       }
     }
   }

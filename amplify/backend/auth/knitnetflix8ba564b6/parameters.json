@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "knitnetflix4468dd20_identitypool_4468dd20",
+    "identityPoolName": "knitnetflix8ba564b6_identitypool_8ba564b6",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "knitne4468dd20",
-    "userPoolName": "knitnetflix4468dd20_userpool_4468dd20",
+    "resourceNameTruncated": "knitne8ba564b6",
+    "userPoolName": "knitnetflix8ba564b6_userpool_8ba564b6",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -29,10 +29,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "knitne4468dd20_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "knitne8ba564b6_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "4468dd20",
-    "resourceName": "knitnetflix4468dd20",
+    "sharedId": "8ba564b6",
+    "resourceName": "knitnetflix8ba564b6",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -47,8 +47,14 @@
         ]
     },
     "useDefault": "default",
+    "triggers": "{}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "breakCircularDependency": true,
+    "permissions": [],
     "dependsOn": []
 }

@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "knitnetflix",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authknitnetflix8ba564b6",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

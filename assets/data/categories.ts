@@ -2,7 +2,8 @@ export default {
     items: [{
         id: 'category1',
         title: 'First Steps',
-        movies: [{
+
+        courses: [{
             id: 'movie1',
             title: 'How to knit socks',
             poster: 'https://thumbs.dreamstime.com/b/hand-knitting-sock-needles-yarn-balls-ion-dark-wooden-background-concept-handmade-hygge-slow-life-hand-knitting-213356849.jpg',
@@ -26,9 +27,8 @@ export default {
     }, {
         id: 'category2',
         title: 'Big Things',
-        time: 3,
-        numberOfParts: 4,
-        movies: [{
+
+        courses: [{
             id: 'movie1',
             title: 'Oversized Sweater',
             poster: 'https://thumbs.dreamstime.com/b/woven-basket-white-thread-knitting-needles-sweaters-yarn-closeup-place-text-gray-121659953.jpg',
@@ -48,7 +48,8 @@ export default {
     }, {
         id: 'category3',
         title: 'Popular on OKS2_knitting',
-        movies: [{
+
+        courses: [{
             id: 'movie1',
             poster: 'https://thumbs.dreamstime.com/b/hand-knitting-sock-needles-yarn-balls-ion-dark-wooden-background-concept-handmade-hygge-slow-life-hand-knitting-213356849.jpg',
         }, {
@@ -67,7 +68,8 @@ export default {
     }, {
         id: 'category4',
         title: 'Polish your skils',
-        movies: [{
+
+        courses: [{
             id: 'movie1',
             title: 'Details-1',
             poster: 'https://thumbs.dreamstime.com/b/woven-basket-white-thread-knitting-needles-sweaters-yarn-closeup-place-text-gray-121659953.jpg',
@@ -88,8 +90,9 @@ export default {
         }]
     }, {
         id: 'category5',
-        title: 'Top 10',
-        movies: [{
+        title: 'Most Popular',
+
+        courses: [{
             id: 'movie1',
             poster: 'https://thumbs.dreamstime.com/b/wool-yarn-wooden-needles-rustic-background-autumn-wabi-sabi-concept-toned-wool-yarn-wooden-needles-rustic-116119091.jpg',
         }, {

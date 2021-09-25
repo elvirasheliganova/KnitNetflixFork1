@@ -16,6 +16,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps, HomeStackParamList } from '../types';
@@ -71,7 +72,7 @@ function BottomTabNavigator() {
         options={({ navigation }: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
           headerShown: false,
-          tabBarIcon: ({ color }) => <AntDesign name="home" color={color} size={20} />,
+          tabBarIcon: ({ color }) => <AntDesign name="home" color={color} size={20} style={{ marginBottom: -20 }} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -93,7 +94,7 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: 'More',
-          tabBarIcon: ({ color }) => <MaterialIcons name="video-library" color={color} size={20} />,
+          tabBarIcon: ({ color }) => <MaterialIcons name="video-library" color={color} size={20} style={{ marginBottom: -20 }} />,
         }}
       />
       <BottomTab.Screen
@@ -101,7 +102,7 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: 'Search',
-          tabBarIcon: ({ color }) => <Ionicons name="search" color={color} size={20} />,
+          tabBarIcon: ({ color }) => <Ionicons name="search" color={color} size={20} style={{ marginBottom: -20 }} />,
         }}
       />
       <BottomTab.Screen
@@ -109,7 +110,15 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: 'Download',
-          tabBarIcon: ({ color }) => <AntDesign name="download" color={color} size={20} />,
+          tabBarIcon: ({ color }) => <AntDesign name="download" color={color} size={20} style={{ marginBottom: -20 }} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <MaterialIcons name="person" size={24} color={color} style={{ marginBottom: -20 }} />,
         }}
       />
     </BottomTab.Navigator>

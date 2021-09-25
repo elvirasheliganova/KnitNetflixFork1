@@ -29,6 +29,7 @@ export type RootTabParamList = {
   More: undefined;
   Search: undefined;
   Download: undefined;
+  Profile: undefined;
 };
 
 export type HomeStackParamList = {

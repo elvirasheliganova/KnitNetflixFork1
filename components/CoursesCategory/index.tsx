@@ -9,7 +9,7 @@ interface CoursesCategoryProps {
   category: {
     id: 'string',
     title: 'string',
-    movies: {
+    courses: {
       id: 'string',
       poster: 'string'
     }[]
@@ -22,14 +22,14 @@ const CoursesCategory = (props: CoursesCategoryProps) => {
   const navigation = useNavigation()
 
   const { category } = props
-  const onPress = (movie: { id: any; }) => {
-    navigation.navigate('CourseDetails', { id: movie.id })
+  const onPress = (course: { id: any; }) => {
+    navigation.navigate('CourseDetails', { id: course.id })
   }
   return (
     <View>
       <Text style={styles.title} >{category.title}</Text>
       <FlatList
-        data={category.movies}
+        data={category.courses}
         renderItem={({ item }) => (
           <Pressable style={styles.imageContainer} onPress={() => onPress(item)} >
             <ImageBackground style={styles.image} source={{ uri: item.poster }} >
