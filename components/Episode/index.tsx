@@ -1,49 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text, Pressable } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
+import { DataStore } from 'aws-amplify';
 import styles from './styles'
-
+import { Course, Part } from '../../src/models'
 import { useNavigation } from '@react-navigation/native'
 import courses from '../../assets/data/courses'
 
 interface EpisodeProps {
-  item: {
-    id: 'string',
-    title: 'string',
-    skills: 'string',
-    numberOfParts: 'string',
-    time: 'string',
-    plot: 'string',
-    poster: 'string',
-
-    parts: {
-      id: 'string',
-      name: 'string',
-      number: 'string',
-      duration: 'string',
-      desc: 'string',
-      video: 'string',
-    }[]
+  course: Course,
+  part: Part []
   }
-}
+
 
 
 const Episode = (props: EpisodeProps) => {
 
-  const { item } = props
+  const { course} = props
   const navigation = useNavigation()
+  const [parts, setParts] = useState<Part[]>([])
+
+  useEffect(() => {
+    const fetchPart = async () => {
+      const result = await (await DataStore.query(Part))
+        .filter((part) => part.courseID === course.id)
+      setParts(result)
+    }
+    fetchPart()
+  })
 
   const onEpisodePress = (part) => {
     navigation.navigate('Video', { id: part.id })
-    console.log(item.id)
+    
   }
 
   return (
-
-
-
     <FlatList
-      data={item.parts}
+      data={parts}
       renderItem={({ item }) =>
 
         <Pressable style={styles.container} onPress={() => onEpisodePress(item)}>
