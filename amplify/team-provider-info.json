@@ -10,11 +10,6 @@
       "StackName": "amplify-knitnetflix-dev-145047",
       "StackId": "arn:aws:cloudformation:eu-central-1:518549961774:stack/amplify-knitnetflix-dev-145047/b733d790-1ba3-11ec-a684-0a9f22aa9aa8",
       "AmplifyAppId": "dmmlrni85e3uy"
-    },
-    "categories": {
-      "auth": {
-        "knitnetflix8ba564b6": {}
-      }
     }
   }
 }

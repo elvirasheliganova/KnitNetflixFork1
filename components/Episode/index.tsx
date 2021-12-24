@@ -35,7 +35,7 @@ const Episode = (props: EpisodeProps) => {
 
   const onEpisodePress = (part) => {
     navigation.navigate('Video', { id: part.id })
-    console.log(item.id)
+    //console.log(item.id)
   }
 
   return (

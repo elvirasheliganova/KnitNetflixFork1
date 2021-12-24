@@ -18,17 +18,21 @@ import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 
+import FavoriteScreen from '../screens/FavoriteScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps, HomeStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
-import EpisodeVideoScreen from '../screens/EpisodeVideoScreen';
+import EpisodeVideoScreen from '../screens/EpisodeVideoScreen'
+import BottomTabNavigator from '../components/BottomTabNavigator';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+
+  
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <RootNavigator />
+      <BottomTabNavigator />
     </NavigationContainer>
   );
 }
@@ -46,16 +50,17 @@ function RootNavigator() {
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
-      </Stack.Group>
+  </Stack.Group>
     </Stack.Navigator>
   );
 }
+
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
+{/*const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
@@ -90,11 +95,11 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="More"
-        component={TabTwoScreen}
+        name="Favs"
+        component={FavoriteScreen}
         options={{
-          title: 'More',
-          tabBarIcon: ({ color }) => <MaterialIcons name="video-library" color={color} size={20} style={{ marginBottom: -20 }} />,
+          title: 'Favourites',
+          tabBarIcon: ({ color }) => <FontAwesome name="heart-o" color={color} size={20} style={{ marginBottom: -20 }} />,
         }}
       />
       <BottomTab.Screen
@@ -105,7 +110,7 @@ function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <Ionicons name="search" color={color} size={20} style={{ marginBottom: -20 }} />,
         }}
       />
-      <BottomTab.Screen
+      {/*<BottomTab.Screen
         name="Download"
         component={TabTwoScreen}
         options={{
@@ -124,6 +129,7 @@ function BottomTabNavigator() {
     </BottomTab.Navigator>
   );
 }
+*/}
 
 const HomeStack = createNativeStackNavigator<HomeStackParamList>()
 
